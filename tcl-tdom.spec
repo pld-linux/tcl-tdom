@@ -22,7 +22,7 @@ recommendation in XML (160K) needs only about 450K in memory)!
 
 %build
 %configure \
-%if %{_lib} == "lib64"
+%if "%{_lib}" == "lib64"
 	--enable-64bit \
 %endif
 	--enable-threads
