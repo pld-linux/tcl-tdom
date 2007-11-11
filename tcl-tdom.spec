@@ -7,7 +7,7 @@ License:	MPL 1.1
 Group:		Development/Languages/Tcl
 Source0:	http://www.tdom.org/files/tDOM-%{version}.tgz
 # Source0-md5:	67790846eb5ec13852a3bf3c382d86dc
-URL:		http://tclxml.sourceforge.net/tclxml.html
+URL:		http://www.tdom.org/
 BuildRequires:	tcl-devel >= 8.4.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
