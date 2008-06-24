@@ -1,5 +1,5 @@
 Summary:	XML parsing for Tcl
-Summary(pl.UTF-8):	Analizowanie XML-a dla Tcl-a
+Summary(pl.UTF-8):	Analizator XML-a dla Tcl-a
 Name:		tcl-tdom
 Version:	0.8.2
 Release:	1
@@ -17,6 +17,14 @@ powerful Tcl scripting functionality. tDOM should be one of the
 fastest ways to manipulate XML with a scripting language and uses very
 little memory in the process (for example the DOM tree of the XML
 recommendation in XML (160K) needs only about 450K in memory)!
+
+%description -l pl.UTF-8
+tDOM łączy wysoko wydajne przetwarzanie danych XML z łatwą i
+dającą duże możliwości funkcjonalnością skryptową Tcl-a. tDOM powinien
+być jednym z najszybszych sposobów obróbki XML-a z poziomu języków
+skryptowych; używa bardzo mało pamięci (np. drzewo DOM rekomendacji
+XML w XML-u, mające 160kB, potrzebuje tylko 450kB pamięci).
+
 %prep
 %setup -q -n tDOM-%{version}
 
@@ -40,10 +48,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog LICENSE README doc/*.html
-%{_includedir}/*.h
 %dir %{_libdir}/tdom*.*
 %attr(755,root,root) %{_libdir}/tdom*.*/*.so
 %{_libdir}/tdom*.*/*.a
 %{_libdir}/tdom*.*/*.tcl
 %dir %{_libdir}/*.sh
+%{_includedir}/*.h
 %{_mandir}/mann/*
