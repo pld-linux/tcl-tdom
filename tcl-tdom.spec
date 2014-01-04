@@ -2,13 +2,13 @@
 Summary:	XML parsing for Tcl
 Summary(pl.UTF-8):	Analizator XML-a dla Tcl-a
 Name:		tcl-tdom
-Version:	0.8.2
+Version:	0.8.3
 Release:	1
 License:	MPL 1.1
 Group:		Development/Languages/Tcl
-Source0:	http://www.tdom.org/files/tDOM-%{version}.tgz
-# Source0-md5:	67790846eb5ec13852a3bf3c382d86dc
-URL:		http://www.tdom.org/
+Source0:	https://github.com/downloads/tDOM/tdom/tDOM-%{version}.tgz
+# Source0-md5:	f773bef5b8f15e0b400f9f93f164a6bb
+URL:		http://tdom.github.io/
 BuildRequires:	tcl-devel >= 8.4.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
