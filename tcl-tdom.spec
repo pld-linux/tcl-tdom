@@ -1,14 +1,14 @@
-# TODO: system expat
 Summary:	XML parsing for Tcl
 Summary(pl.UTF-8):	Analizator XML-a dla Tcl-a
 Name:		tcl-tdom
-Version:	0.8.3
+Version:	0.9.0
 Release:	1
 License:	MPL 1.1
 Group:		Development/Languages/Tcl
-Source0:	https://github.com/downloads/tDOM/tdom/tDOM-%{version}.tgz
-# Source0-md5:	f773bef5b8f15e0b400f9f93f164a6bb
-URL:		http://tdom.github.io/
+Source0:	http://tdom.org/downloads/tdom-0.9.0-src.tgz
+# Source0-md5:	22a1a4ad5fed6dfbe29c83083bf14d83
+URL:		http://tdom.org/
+BuildRequires:	expat-devel
 BuildRequires:	tcl-devel >= 8.4.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -42,14 +42,15 @@ C development files for tDOM module.
 Pliki programistyczne C dla modułu tDOM.
 
 %prep
-%setup -q -n tDOM-%{version}
+%setup -q -n tdom-%{version}
 
 %build
 %configure \
 %if "%{_lib}" == "lib64"
 	--enable-64bit \
 %endif
-	--enable-threads
+	--enable-threads \
+	--with-expat=%{_prefix}
 %{__make}
 
 %install
@@ -57,6 +58,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+chmod a+x $RPM_BUILD_ROOT%{_libdir}/tdom*/*.so*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
